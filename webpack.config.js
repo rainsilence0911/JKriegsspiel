@@ -1,16 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
 var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var values = require('postcss-modules-values');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var isDebug = false;
+var isDebug = true;
 
 module.exports = {
     entry: [
         "webpack/hot/dev-server",    // [webpack-dev-server config] hot module refresh require
-        "./app/main.js"
+        "./client/main.js"
     ],
     output: {
         path: BUILD_PATH,
@@ -38,7 +37,7 @@ module.exports = {
         }]
     },
     devtool: "eval",
-    debug: true,
+    debug: isDebug,
     postcss: [
         values
     ],

@@ -1,0 +1,68 @@
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.jkriegsspiel {
+    width: 1024px;
+    height: 100%;
+    display: table;
+}
+
+.wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    height: 700px;
+}
+
+.background {
+    background-image: url(../images/chessboard.jpg);
+    width: 100%;
+    height: 700px;
+}
+
+.base-position {
+    width: 100%;
+    height: 700px;
+}
+
+.container {
+    composes: base-position;
+    position: relative;
+}
+
+.base-piece {
+    width: 35px;
+    height: 26px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.piece {
+    composes: base-piece;
+    background-image: url(../images/blue/0.jpg);
+    top: 12px;
+    left: 12px;
+}
+
+.piece-container {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.piece-frame {
+    composes: base-piece;
+    position: absolute;
+    display: inline-block;
+    border: solid 1px red;
+    color: red;
+}
+
+.piece-frame-container {
+    composes: base-position;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
