@@ -11,10 +11,10 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 var container = document.getElementById("container");
 
 ReactDom.render((
-	<Router history={browserHistory}>
-    	<Route path="/" component={App}>
-    		<IndexRoute component={Login}/>
-    		<Route path="play" component={PlayGround}/>
-    	</Route>
-  	</Router>
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Login}/>
+           	<Route path="play" component={PlayGround}/>
+        </Route>
+    </Router>
 ), container);
