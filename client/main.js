@@ -14,7 +14,7 @@ ReactDom.render((
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Login}/>
-           	<Route path="play" component={PlayGround}/>
+            <Route path="play" component={PlayGround}/>
         </Route>
     </Router>
 ), container);
