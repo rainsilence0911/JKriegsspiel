@@ -1,6 +1,12 @@
 
 let position = ["u", "r", "b", "l"];
 let basePos = "b";
+let positionImageMapper = {
+    "u": "blue",
+    "r": "orange",
+    "b": "green",
+    "l": "violet"
+};
 let centerPos = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 function rotateCenter() {
@@ -803,9 +809,38 @@ var metaInfo = {
         left: 804,
         top: 410,
         horizontalType: "right"
-    }]
+    }],
+
+    defaultPieceLayoutMapper: {
+        0: "99",
+        1: "0",
+        2: "99",
+        3: "99",
+        4: "1",
+        5: "1",
+        6: "1",
+        7: "33",
+        8: "33",
+        9: "33",
+        10: "34",
+        12: "34",
+        14: "34",
+        15: "35",
+        16: "35",
+        18: "36",
+        19: "36",
+        20: "37",
+        22: "37",
+        24: "38",
+        25: "38",
+        26: "98",
+        27: "98",
+        28: "39",
+        29: "40"
+    },
+    positionImageMapper: positionImageMapper
 };
 
-transformRule("r");
+transformRule("u");
 
 export default metaInfo;

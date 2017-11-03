@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
+    "start": "webpack-dev-server --inline --hot",
     "hot-dev-server": "webpack-dev-server --inline --hot"
   },
   "author": "",

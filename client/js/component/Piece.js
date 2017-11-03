@@ -5,17 +5,26 @@ import ExecutorService from '../util/ExecutorService';
 import Task from '../util/Task';
 
 import style from '../../css/style.css';
+import pieceStyle from '../../css/piece.css';
+import meta from '../constant/meta';
 
 export default class Piece extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
+        let frameInfo = props.frame;
+        let pieceLayoutMapper = meta.defaultPieceLayoutMapper;
+        let positionImageMapper = meta.positionImageMapper;
 
         this.initStatus = {
 
             isReverse: true,
 
+            pieceStyle: pieceStyle[positionImageMapper[frameInfo.serverId[0]] + "-" + pieceLayoutMapper[frameInfo.serverId[1]]],
+
             runtimeStyle: {
-                opacity: 1
+                opacity: 1,
+                left: frameInfo.left + 'px',
+                top: frameInfo.top + 'px'
             }
         };
 
@@ -43,7 +52,9 @@ export default class Piece extends React.Component {
             isReverse: isReverse,
 
             runtimeStyle: {
-                opacity: opacity
+                opacity: opacity,
+                left: state.runtimeStyle.left,
+                top: state.runtimeStyle.top
             }
         });
     }
@@ -66,7 +77,7 @@ export default class Piece extends React.Component {
 
     render() {
         return (
-            <div style={this.state.runtimeStyle} className={style.piece} onClick={this.onPieceClick.bind(this)}></div>
+            <div style={this.state.runtimeStyle} className={style["base-piece"] + " " + this.state.pieceStyle} onClick={this.onPieceClick.bind(this)}></div>
         );
     }
 }
